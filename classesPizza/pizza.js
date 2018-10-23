@@ -7,8 +7,8 @@ class Pizza {
     this.toppings = ["Cheese"];
   }
 
-  addTopping(topping) {
-    this.toppings.push(topping);
+  addTopping(...topping) {//Note the use of the spread operator
+    this.toppings.push(...topping);
   }
 
   removeTopping(topping) {
@@ -21,7 +21,6 @@ class Pizza {
 let pizza1 = new Pizza("Medium", "thin", true);
 
 
-pizza1.addTopping("Green Peppers");
-pizza1.addTopping("Mushrooms");
+pizza1.addTopping("Green Peppers", "Mushrooms", "Bacon");
 pizza1.removeTopping("Green Peppers")
 console.log(pizza1);
